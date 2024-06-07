@@ -27,6 +27,9 @@ class BluetoothManager: NSObject, ObservableObject {
     @Published var errorDescription = ""
     @Published var showAlert = false
     
+    @Published var readString = ""
+    @Published var waitingForReceivedConfirmation = false
+    
     // Initialize manager.
     override init () {
         super.init()
@@ -69,7 +72,17 @@ class BluetoothManager: NSObject, ObservableObject {
     
     // Send string to writable characteristic.
     func send(_ string: String) {
+        if writableCharacteristic == nil {
+            disconnectPeripheral()
+            return
+        }
+        
+        withAnimation {
+            waitingForReceivedConfirmation = true
+        }
+        
         if let connectedPeripheral, let writableCharacteristic, let data = string.data(using: .utf8) {
+            print(string)
             connectedPeripheral.writeValue(data, for: writableCharacteristic, type: .withResponse)
         }
     }

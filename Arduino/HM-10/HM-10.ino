@@ -13,16 +13,16 @@ int i = 0;
 void loop() {
   // Llega un dato por BT, se envía serial.
   if (BT.available()) { 
-    Serial.write(BT.read());
+    Serial.println(BT.readString());
   }
 
   if (Serial.available()) {
     BT.write(Serial.read());
   }
 
-  char data[255];
+  /*char data[255];
 
   sprintf(data, "Enviando datos %d", i);
-  //Serial.println(data);
-  i += 1;
+  Serial.println(data);
+  i += 1;*/
 }

@@ -10,9 +10,9 @@ import SwiftData
 
 @main
 struct Arduino_3D_ScannerApp: App {
-    /*var sharedModelContainer: ModelContainer = {
+    var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Scan.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -21,7 +21,7 @@ struct Arduino_3D_ScannerApp: App {
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
-    }()*/
+    }()
 
     var body: some Scene {
         WindowGroup {
@@ -31,12 +31,12 @@ struct Arduino_3D_ScannerApp: App {
                         Label("Home", systemImage: "house.fill")
                     }
                 
-                Text("Recents...")
+                Recents()
                     .tabItem {
                         Label("Recents", systemImage: "arrow.counterclockwise.circle")
                     }
             }
         }
-       // .modelContainer(sharedModelContainer)
+        .modelContainer(sharedModelContainer)
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import CoreBluetooth
+import SwiftUI
 
 extension BluetoothManager: CBPeripheralDelegate {
     
@@ -63,16 +64,34 @@ extension BluetoothManager: CBPeripheralDelegate {
         }
         
         if let value = characteristic.value {
-            print((String(data: value, encoding: .utf8) ?? "\(String(describing: value))").trimmingCharacters(in: .newlines))
+            print("Characteristic updated value for: \(characteristic)\n")
+            
+            let string = (String(data: value, encoding: .utf8) ?? String(describing: value)).trimmingCharacters(in: .newlines)
+            
+            print(string)
+            
+            // Message was received.
+            if string == "RM" {
+                withAnimation {
+                    waitingForReceivedConfirmation = false
+                }
+                
+                return
+            }
+            
+            if string.trimmingCharacters(in: .whitespacesAndNewlines).count > 0 {
+                readString = string
+            }
         }
     }
     
-   
+    // Wrote value to a characteristic (a message was sent to the bluetooth device.)
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: (any Error)?) {
         if let error {
-            print("Error writing value for characteristic. \(error.localizedDescription)")
+            print("Error writing value for characteristic. \(error.localizedDescription).\nValue:\n")
             errorDescription = error.localizedDescription
             showAlert = true
+            return
         }
         print("Did write value for \(characteristic)")
     }

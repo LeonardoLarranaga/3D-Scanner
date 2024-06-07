@@ -26,6 +26,8 @@ struct ContentView: View {
                     (horizontalSizeClass == .compact ? AnyLayout(VStackLayout()) : AnyLayout(HStackLayout())) {
                         VStack {
                             BluetoothButton
+                                .frame(width: 400, height: 400)
+                                .offset(x: 10)
                             SimulateMenu
                         }
                         
@@ -35,7 +37,7 @@ struct ContentView: View {
                                     .font(.title3.bold())
                                     .fontWeight(.bold)
                                 
-                                List(bluetoothManager.discoveredPeripherals, id: \.identifier) { peripheral in
+                                List(bluetoothManager.discoveredPeripherals.filter { $0.name != nil }, id: \.identifier) { peripheral in
                                     Button {
                                         bluetoothManager.connect(to: peripheral)
                                     } label: {
@@ -48,12 +50,9 @@ struct ContentView: View {
                         }
                     }
                     
-                    
                     Spacer()
                     
-                    
-                    Text("Project by:\nLarrañaga Flores Luis Leonardo\nPerez Solorio Kadir Josafat")
-                        .font(.caption)
+                    Text("Project by:\nLarrañaga Flores Luis Leonardo\nPérez Solorio Kadir Josafat")
                         .fontDesign(.monospaced)
                         .foregroundStyle(.secondary.opacity(0.8))
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -68,7 +67,7 @@ struct ContentView: View {
                 showingScanView.toggle()
             }
             .fullScreenCover(isPresented: .constant(bluetoothManager.connectedPeripheral != nil)) {
-                BluetoothScanner(bluetoothManager: bluetoothManager)
+                BluetoothScannerSettings(bluetoothManager: bluetoothManager)
             }
             .fullScreenCover(isPresented: $showingScanView) {
                 NavigationStack {
@@ -80,6 +79,7 @@ struct ContentView: View {
                 UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .red
             }
         }
+        .confirmationProgress(bluetoothManager: bluetoothManager)
     }
     
     var SimulateMenu: some View {
@@ -117,10 +117,12 @@ struct ContentView: View {
             Button {
                 bluetoothManager.bluetoothAnimation.toggle()
                 
-                if bluetoothManager.isDiscoveringPeripherals {
-                    bluetoothManager.stopScan()
-                } else {
-                    bluetoothManager.startScan()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    if bluetoothManager.isDiscoveringPeripherals {
+                        bluetoothManager.stopScan()
+                    } else {
+                        bluetoothManager.startScan()
+                    }
                 }
             } label: {
                 Image("Bluetooth")
@@ -130,9 +132,8 @@ struct ContentView: View {
                     .clipShape(.circle)
             }
         }
-        .frame(width: 400, height: bluetoothManager.bluetoothAnimation ? 400 : 200)
-        .offset(x: bluetoothManager.bluetoothAnimation && bluetoothManager.discoveredPeripherals.count > 0 ? 10 : 0)
         .animation(.bouncy(duration: 1.0).repeatForever(autoreverses: true), value: bluetoothManager.bluetoothAnimation)
+        
     }
 }
 

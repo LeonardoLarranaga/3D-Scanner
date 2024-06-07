@@ -20,7 +20,6 @@ struct ScannerSimulation: View {
     @State var finishSimulation = false
     @State var index = 0
     @State var speed = 2.5
-    @State var dismissed = false
     
     @State var pointCloud: [SCNVector3]? = nil
     
@@ -35,7 +34,7 @@ struct ScannerSimulation: View {
                     }
                 }
             } else {
-                SceneView(scene: scene, options: [.autoenablesDefaultLighting, .allowsCameraControl], preferredFramesPerSecond: 60)
+                SceneView(scene: scene, options: [.autoenablesDefaultLighting, .allowsCameraControl], preferredFramesPerSecond: 120)
                     .ignoresSafeArea()
                     .overlay(alignment: .topTrailing) {
                         Button("Finish Simulation") {
@@ -54,9 +53,7 @@ struct ScannerSimulation: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .overlay(alignment: .topLeading) {
-            Button {
-                dismissed = true
-            } label: {
+            Button(action: dismissView) {
                 Image(systemName: "xmark")
                     .font(.title2)
                     .padding(10)
@@ -70,13 +67,14 @@ struct ScannerSimulation: View {
         .preferredColorScheme(scanning ? .dark : .light)
     }
     
+    @MainActor
     func createScene() async {
         scene.background.contents = UIColor.black
-        
-        let cameraNode = await SCNNode()
+
+        let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
         cameraNode.position = SCNVector3Make(0, 0, 100)
-        await scene.rootNode.addChildNode(cameraNode)
+        scene.rootNode.addChildNode(cameraNode)
         
         pointCloud = PointCloud.loadPointCloud(from: example)
         
@@ -84,12 +82,11 @@ struct ScannerSimulation: View {
             for index in 0..<pointCloud.count {
                 if finishSimulation { return }
                 try? await Task.sleep(nanoseconds: UInt64(speed * 1_000_000_000))
-                print(speed)
                 let sphere = SCNSphere(radius: 0.1)
-                let sphereNode = await SCNNode(geometry: sphere)
+                let sphereNode = SCNNode(geometry: sphere)
                 sphereNode.position = pointCloud[index]
                 
-                await scene.rootNode.addChildNode(sphereNode)
+                scene.rootNode.addChildNode(sphereNode)
             }
         } else {
             dismissView()
@@ -109,7 +106,7 @@ struct ScannerSimulation: View {
     func dismissView() {
         pointCloud = []
         scene = SCNScene()
-        
+        dismiss()
     }
 }
 

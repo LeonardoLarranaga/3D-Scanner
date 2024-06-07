@@ -16,8 +16,13 @@
 		4A1A268B2BDC0C3800079464 /* PointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A268A2BDC0C3800079464 /* PointCloud.swift */; };
 		4A2B09042BDECB300086D9D1 /* Bluetooth Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2B09032BDECB300086D9D1 /* Bluetooth Manager.swift */; };
 		4A2B09062BDEEB5B0086D9D1 /* Bluetooth Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2B09052BDEEB5B0086D9D1 /* Bluetooth Scanner.swift */; };
+		4A379A452C05C3E000FB26CD /* Octagonal Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A379A442C05C3E000FB26CD /* Octagonal Base.swift */; };
+		4A379A472C05C87800FB26CD /* Bluetooth Scanner Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A379A462C05C87800FB26CD /* Bluetooth Scanner Settings.swift */; };
+		4A379A4A2C067B5900FB26CD /* Confirmation Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A379A492C067B5900FB26CD /* Confirmation Progress.swift */; };
+		4A4F037D2C10F3F000677431 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F037C2C10F3F000677431 /* ScanView.swift */; };
+		4A6A8D1E2BEF2CBD00CF3C74 /* Recents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A8D1D2BEF2CBD00CF3C74 /* Recents.swift */; };
 		4A8589542BDA287000E7B1C4 /* Arduino_3D_ScannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8589532BDA287000E7B1C4 /* Arduino_3D_ScannerApp.swift */; };
-		4A8589582BDA287000E7B1C4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8589572BDA287000E7B1C4 /* Item.swift */; };
+		4A8589582BDA287000E7B1C4 /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8589572BDA287000E7B1C4 /* Scan.swift */; };
 		4A85895A2BDA287100E7B1C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A8589592BDA287100E7B1C4 /* Assets.xcassets */; };
 		4A85895E2BDA287100E7B1C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A85895D2BDA287100E7B1C4 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -32,9 +37,15 @@
 		4A1A268A2BDC0C3800079464 /* PointCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointCloud.swift; sourceTree = "<group>"; };
 		4A2B09032BDECB300086D9D1 /* Bluetooth Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bluetooth Manager.swift"; sourceTree = "<group>"; };
 		4A2B09052BDEEB5B0086D9D1 /* Bluetooth Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bluetooth Scanner.swift"; sourceTree = "<group>"; };
-		4A8589502BDA287000E7B1C4 /* Arduino-3D-Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arduino-3D-Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A379A442C05C3E000FB26CD /* Octagonal Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Octagonal Base.swift"; sourceTree = "<group>"; };
+		4A379A462C05C87800FB26CD /* Bluetooth Scanner Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bluetooth Scanner Settings.swift"; sourceTree = "<group>"; };
+		4A379A492C067B5900FB26CD /* Confirmation Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Confirmation Progress.swift"; sourceTree = "<group>"; };
+		4A4F037C2C10F3F000677431 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		4A4F037E2C111CA500677431 /* ARDSCAN-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ARDSCAN-Info.plist"; sourceTree = "<group>"; };
+		4A6A8D1D2BEF2CBD00CF3C74 /* Recents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recents.swift; sourceTree = "<group>"; };
+		4A8589502BDA287000E7B1C4 /* ARDSCAN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARDSCAN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8589532BDA287000E7B1C4 /* Arduino_3D_ScannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arduino_3D_ScannerApp.swift; sourceTree = "<group>"; };
-		4A8589572BDA287000E7B1C4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		4A8589572BDA287000E7B1C4 /* Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Scan.swift; path = ../Scan.swift; sourceTree = "<group>"; };
 		4A8589592BDA287100E7B1C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A85895B2BDA287100E7B1C4 /* Arduino_3D_Scanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Arduino_3D_Scanner.entitlements; sourceTree = "<group>"; };
 		4A85895D2BDA287100E7B1C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -57,6 +68,7 @@
 				4A2B09032BDECB300086D9D1 /* Bluetooth Manager.swift */,
 				4A19DF192BE337430094AAA4 /* Central Manager Delegate.swift */,
 				4A19DF1B2BE347DF0094AAA4 /* Peripheral Delegate.swift */,
+				4A379A492C067B5900FB26CD /* Confirmation Progress.swift */,
 			);
 			path = "Bluetooth Manager";
 			sourceTree = "<group>";
@@ -70,9 +82,19 @@
 			path = "PointCloud Examples";
 			sourceTree = "<group>";
 		};
+		4A4F037B2C10F39B00677431 /* Recents */ = {
+			isa = PBXGroup;
+			children = (
+				4A8589572BDA287000E7B1C4 /* Scan.swift */,
+				4A4F037C2C10F3F000677431 /* ScanView.swift */,
+			);
+			path = Recents;
+			sourceTree = "<group>";
+		};
 		4A8589472BDA287000E7B1C4 = {
 			isa = PBXGroup;
 			children = (
+				4A4F037E2C111CA500677431 /* ARDSCAN-Info.plist */,
 				4A8589522BDA287000E7B1C4 /* Arduino-3D-Scanner */,
 				4A8589512BDA287000E7B1C4 /* Products */,
 			);
@@ -81,7 +103,7 @@
 		4A8589512BDA287000E7B1C4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4A8589502BDA287000E7B1C4 /* Arduino-3D-Scanner.app */,
+				4A8589502BDA287000E7B1C4 /* ARDSCAN.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,14 +111,17 @@
 		4A8589522BDA287000E7B1C4 /* Arduino-3D-Scanner */ = {
 			isa = PBXGroup;
 			children = (
-				4A19DF132BE31D790094AAA4 /* Bluetooth Manager */,
-				4A8589592BDA287100E7B1C4 /* Assets.xcassets */,
 				4A8589532BDA287000E7B1C4 /* Arduino_3D_ScannerApp.swift */,
 				4A1A26862BDC062400079464 /* ContentView.swift */,
+				4A8589592BDA287100E7B1C4 /* Assets.xcassets */,
+				4A19DF132BE31D790094AAA4 /* Bluetooth Manager */,
 				4A2B09052BDEEB5B0086D9D1 /* Bluetooth Scanner.swift */,
+				4A379A462C05C87800FB26CD /* Bluetooth Scanner Settings.swift */,
 				4A1A26882BDC0A9600079464 /* ScannerSimulation.swift */,
 				4A1A268A2BDC0C3800079464 /* PointCloud.swift */,
-				4A8589572BDA287000E7B1C4 /* Item.swift */,
+				4A4F037B2C10F39B00677431 /* Recents */,
+				4A6A8D1D2BEF2CBD00CF3C74 /* Recents.swift */,
+				4A379A442C05C3E000FB26CD /* Octagonal Base.swift */,
 				4A85895B2BDA287100E7B1C4 /* Arduino_3D_Scanner.entitlements */,
 				4A1A26832BDB8F0C00079464 /* PointCloud Examples */,
 				4A85895C2BDA287100E7B1C4 /* Preview Content */,
@@ -115,9 +140,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4A85894F2BDA287000E7B1C4 /* Arduino-3D-Scanner */ = {
+		4A85894F2BDA287000E7B1C4 /* ARDSCAN */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A8589612BDA287100E7B1C4 /* Build configuration list for PBXNativeTarget "Arduino-3D-Scanner" */;
+			buildConfigurationList = 4A8589612BDA287100E7B1C4 /* Build configuration list for PBXNativeTarget "ARDSCAN" */;
 			buildPhases = (
 				4A85894C2BDA287000E7B1C4 /* Sources */,
 				4A85894D2BDA287000E7B1C4 /* Frameworks */,
@@ -127,9 +152,11 @@
 			);
 			dependencies = (
 			);
-			name = "Arduino-3D-Scanner";
+			name = ARDSCAN;
+			packageProductDependencies = (
+			);
 			productName = "Arduino-3D-Scanner";
-			productReference = 4A8589502BDA287000E7B1C4 /* Arduino-3D-Scanner.app */;
+			productReference = 4A8589502BDA287000E7B1C4 /* ARDSCAN.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -140,7 +167,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					4A85894F2BDA287000E7B1C4 = {
 						CreatedOnToolsVersion = 15.3;
@@ -156,11 +183,13 @@
 				Base,
 			);
 			mainGroup = 4A8589472BDA287000E7B1C4;
+			packageReferences = (
+			);
 			productRefGroup = 4A8589512BDA287000E7B1C4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4A85894F2BDA287000E7B1C4 /* Arduino-3D-Scanner */,
+				4A85894F2BDA287000E7B1C4 /* ARDSCAN */,
 			);
 		};
 /* End PBXProject section */
@@ -184,10 +213,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A379A472C05C87800FB26CD /* Bluetooth Scanner Settings.swift in Sources */,
 				4A1A26872BDC062400079464 /* ContentView.swift in Sources */,
-				4A8589582BDA287000E7B1C4 /* Item.swift in Sources */,
+				4A8589582BDA287000E7B1C4 /* Scan.swift in Sources */,
 				4A2B09062BDEEB5B0086D9D1 /* Bluetooth Scanner.swift in Sources */,
 				4A8589542BDA287000E7B1C4 /* Arduino_3D_ScannerApp.swift in Sources */,
+				4A6A8D1E2BEF2CBD00CF3C74 /* Recents.swift in Sources */,
+				4A379A4A2C067B5900FB26CD /* Confirmation Progress.swift in Sources */,
+				4A4F037D2C10F3F000677431 /* ScanView.swift in Sources */,
+				4A379A452C05C3E000FB26CD /* Octagonal Base.swift in Sources */,
 				4A1A268B2BDC0C3800079464 /* PointCloud.swift in Sources */,
 				4A1A26892BDC0A9600079464 /* ScannerSimulation.swift in Sources */,
 				4A19DF1A2BE337430094AAA4 /* Central Manager Delegate.swift in Sources */,
@@ -233,6 +267,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -294,6 +329,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -321,11 +357,15 @@
 				CODE_SIGN_ENTITLEMENTS = "Arduino-3D-Scanner/Arduino_3D_Scanner.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Arduino-3D-Scanner/Preview Content\"";
 				DEVELOPMENT_TEAM = S2979MMU4H;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ARDSCAN-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ARDSCAN;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth is required to connect with the 3D Scanner.";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Bluetooth is required to connect with the 3D Scanner.";
@@ -349,6 +389,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -363,11 +404,15 @@
 				CODE_SIGN_ENTITLEMENTS = "Arduino-3D-Scanner/Arduino_3D_Scanner.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Arduino-3D-Scanner/Preview Content\"";
 				DEVELOPMENT_TEAM = S2979MMU4H;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ARDSCAN-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ARDSCAN;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth is required to connect with the 3D Scanner.";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Bluetooth is required to connect with the 3D Scanner.";
@@ -391,6 +436,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -409,7 +455,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A8589612BDA287100E7B1C4 /* Build configuration list for PBXNativeTarget "Arduino-3D-Scanner" */ = {
+		4A8589612BDA287100E7B1C4 /* Build configuration list for PBXNativeTarget "ARDSCAN" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A8589622BDA287100E7B1C4 /* Debug */,

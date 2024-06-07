@@ -6,6 +6,7 @@
 //
 
 import CoreBluetooth
+import SwiftUI
 
 extension BluetoothManager: CBCentralManagerDelegate {
     
@@ -33,6 +34,7 @@ extension BluetoothManager: CBCentralManagerDelegate {
         discoveredCharacteristics = []
         connectedPeripheral = nil
         bluetoothAnimation = false
+        waitingForReceivedConfirmation = false
     }
     
     // Manager failed to connect to peripheral.
@@ -49,29 +51,39 @@ extension BluetoothManager: CBCentralManagerDelegate {
     
     // Manager updated its state.
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        print("State changed.")
-        switch central.state {
-        case .resetting:
-            errorDescription = "Bluetooth is resetting."
-            showAlert = true
-            isDiscoveringPeripherals = false
-        case .unsupported:
-            errorDescription = "Bluetooth is unsupported."
-            showAlert = true
-        case .unauthorized:
-            errorDescription = "Bluetooth is aunauthorized."
-            showAlert = true
-        case .poweredOff:
-            print("Bluetooth is powered off.")
-            isBluetoothOn = false
-            isDiscoveringPeripherals = false
-            stopScan()
-        case .poweredOn:
-            print("Bluetooth is powered on.")
-            isBluetoothOn = true
-        default:
-            errorDescription = "Bluetooth state unknown."
-            isDiscoveringPeripherals = false
+        withAnimation {
+            print("State changed.")
+            switch central.state {
+            case .resetting:
+                errorDescription = "Bluetooth is resetting."
+                showAlert = true
+                isDiscoveringPeripherals = false
+                waitingForReceivedConfirmation = false
+                bluetoothAnimation = false
+            case .unsupported:
+                errorDescription = "Bluetooth is unsupported."
+                showAlert = true
+                waitingForReceivedConfirmation = false
+            case .unauthorized:
+                errorDescription = "Bluetooth is aunauthorized."
+                showAlert = true
+                waitingForReceivedConfirmation = false
+            case .poweredOff:
+                print("Bluetooth is powered off.")
+                isBluetoothOn = false
+                isDiscoveringPeripherals = false
+                bluetoothAnimation = false
+                stopScan()
+                waitingForReceivedConfirmation = false
+            case .poweredOn:
+                print("Bluetooth is powered on.")
+                isBluetoothOn = true
+            default:
+                errorDescription = "Bluetooth state unknown."
+                isDiscoveringPeripherals = false
+                bluetoothAnimation = false
+                waitingForReceivedConfirmation = false
+            }
         }
     }
     
@@ -81,7 +93,9 @@ extension BluetoothManager: CBCentralManagerDelegate {
         
         if !discoveredPeripherals.contains(peripheral) {
             print("Discovered peripheral: \(getName(of: peripheral, advertisementData: advertisementData))")
-            discoveredPeripherals.append(peripheral)
+            withAnimation {
+                discoveredPeripherals.append(peripheral)
+            }
         }
     }
 }
